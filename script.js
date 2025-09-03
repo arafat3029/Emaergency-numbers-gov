@@ -22,7 +22,9 @@ for (let call of calls) {
     let time = new Date().toLocaleTimeString();
     coinNum = coinNum - 20;
     if (coinNum < 0) {
-      alert("You don’t have enough coins. It will take at least 20 coins to make a call...");
+      alert(
+        "You don’t have enough coins. It will take at least 20 coins to make a call..."
+      );
     } else {
       alert(`calling ${nam}  ${num}...`);
       document.getElementById("coins").innerText = coinNum;
@@ -39,22 +41,22 @@ for (let call of calls) {
 
 // Call History
 
-document.getElementById("clears").addEventListener("click",function(){
-    cart_container.innerHTML = ""
-})
+document.getElementById("clears").addEventListener("click", function () {
+  cart_container.innerHTML = "";
+});
 
 // copy section
 
-let copyCount = parseInt( document.getElementById("copyet").innerText)
-    
-let allcopy = document.getElementsByClassName("copy-btns")
-for(let one of allcopy){
-   one.addEventListener("click",function(){
-      copyCount = copyCount + 1
-      let grandparent = one.parentElement.parentElement; 
-      let num = grandparent.children[3].innerText;
-       document.getElementById("copyet").innerText = copyCount
-      alert(` The number has been copied. ${num}`)
-      navigator.clipboard.writeText(num);
-   })
+let copyCount = parseInt(document.getElementById("copyet").innerText);
+
+let allcopy = document.getElementsByClassName("copy-btns");
+for (let one of allcopy) {
+  one.addEventListener("click", function () {
+    copyCount = copyCount + 1;
+    let grandparent = one.parentElement.parentElement;
+    let num = grandparent.children[3].innerText;
+    document.getElementById("copyet").innerText = copyCount;
+    alert(` The number has been copied. ${num}`);
+    navigator.clipboard.writeText(num);
+  });
 }
